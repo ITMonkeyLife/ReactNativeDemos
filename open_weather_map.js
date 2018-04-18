@@ -13,7 +13,7 @@ function fetchForecast(url) {
   return fetch(url)
     .then(response => response.json())
     .then(responseJSON => {
-      if(responseJSON.weather[0] !== undefined) {
+      if(responseJSON.weather) {
         return {
           main: responseJSON.weather[0].main,
           description: responseJSON.weather[0].description,
