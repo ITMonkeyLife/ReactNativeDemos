@@ -49,13 +49,19 @@ class WeatherProject extends Component {
       .done();
 
     OpenWeatherMap.fetchZipForecast(zip).then(forecast => {
-      this.setState({ forecast: forecast });
+      if(forecast) {
+        this.setState({ forecast: forecast });
+      }
+      
     });
   };
 
   _getForecastForCoords = (lat, lon) => {
     OpenWeatherMap.fetchLatLonForecast(lat, lon).then(forecast => {
-      this.setState({ forecast: forecast });
+      if(forecast) {
+        this.setState({ forecast: forecast });
+      }
+      
     });
   };
 
