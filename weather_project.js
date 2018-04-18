@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     marginLeft: 5,
     marginTop: 3,
-    width: 80,
+    width: 120,
     height: textStyles.baseFontSize * 2,
     justifyContent: "flex-end"
   },
