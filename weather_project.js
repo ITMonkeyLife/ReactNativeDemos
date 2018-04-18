@@ -70,8 +70,8 @@ class WeatherProject extends Component {
       content = (
         <View style={styles.row}>
           <Forecast
-            main={this.state.forecast.main}
-            temp={this.state.forecast.temp}
+            main={this.state.forecast.main || ''}
+            temp={this.state.forecast.temp || ''}
           />
         </View>
       );
