@@ -13,12 +13,16 @@ function fetchForecast(url) {
   return fetch(url)
     .then(response => response.json())
     .then(responseJSON => {
-      alert(JSON.stringify(responseJSON))
-      return {
-        main: responseJSON.weather[0].main,
-        description: responseJSON.weather[0].description,
-        temp: responseJSON.main.temp
-      };
+      if(responseJSON.cod !== "404") {
+        return {
+          main: responseJSON.weather[0].main,
+          description: responseJSON.weather[0].description,
+          temp: responseJSON.main.temp
+        };
+      } else {
+        alert(responseJSON.message)
+      }
+      
     })
     .catch(error => {
       console.error(error);
